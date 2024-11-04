@@ -3,13 +3,13 @@
 // Funciones de cambio de base de decimal a base X y de base X a decimal
 
 /**
- * Función que realiza el cambio de base de un número de base 10 a otra base
+ * Función que realiza el cambio de base de un número de base 10 a otra base (2-16)
  * 
- * @param string $numero Número que se desea cambia de base
- * @param int $base Base a la que se va a cambiar
+ * @param int $numero Número expresado en base 10
+ * @param int $base Base a la que se va a cambiar (2-16)
  * @return string Número expresado en la nueva base
  */
-function dec2x(int $numero, int $base): string {
+function dec2x(int $numero, int $base = 2): string {
     $conversion = '';
     do {
         $resto = $numero % $base;
@@ -23,13 +23,13 @@ function dec2x(int $numero, int $base): string {
 }
 
 /**
- * Función que realiza el cambio de base de un número de base 10 a otra base
+ * Función que realiza el cambio de base de un número en un base (2-16) a base 10
  * 
- * @param string $numero Número que se desea cambia de base
- * @param int $base Base a la que se va a cambiar
- * @return string Número expresado en la nueva base
+ * @param string $numero Número que se desea cambiar de base
+ * @param int $base Base en la que se expresa dicho número (2-16)
+ * @return string Número expresado en base 10
  */
-function x2dec(string $numero, int $base): int {
+function x2dec(string $numero, int $base = 2): int {
     $conversion = 0;
     for ($i = 0; $i < strlen($numero); $i++) {
         $digito = substr(strrev((string) $numero), $i, 1);
