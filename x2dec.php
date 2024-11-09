@@ -3,11 +3,11 @@ $base = 16;
 $numero = 'F5';
 $conversion = 0;
 for ($i = 0; $i < strlen($numero); $i++) {
-    $digito = substr(strrev((string) $numero), $i, 1);
+    $digito = substr(strrev($numero), $i, 1);
         if (!is_numeric($digito)) {
             $digito = (ord($digito) - ord('A') + 10);
         }
-        $conversion += $digito * pow($base, $i);
+        $conversion += (int) $digito * pow($base, $i);
 }
 
 ?>
